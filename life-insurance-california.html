@@ -8,107 +8,136 @@
   <style>
     :root {
       color-scheme: light;
-      --ink: #1f2933;
-      --muted: #64707d;
-      --paper: #fffdf8;
-      --soft: #f6f1e8;
-      --line: #ded6c9;
-      --forest: #183f35;
-      --green: #2f6b57;
-      --gold: #b9853b;
-      --cream: #fff8ec;
+      --ink: #101820;
+      --navy: #102836;
+      --teal: #1e617b;
+      --teal-2: #2f7d8f;
+      --steel: #6d7a82;
+      --mist: #eef3f5;
+      --paper: #fbfbf8;
       --white: #ffffff;
+      --line: #d8e0e3;
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       color: var(--ink);
       background: var(--paper);
       line-height: 1.55;
+      overflow-x: hidden;
     }
 
-    a {
-      color: var(--green);
-    }
-
-    .wrap {
-      max-width: 1080px;
-      margin: 0 auto;
-    }
+    a { color: var(--teal); }
+    .wrap { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
 
     header {
-      background: var(--paper);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(251, 251, 248, 0.94);
       border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(14px);
     }
 
     nav {
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 18px 20px;
+      min-height: 76px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 18px;
-      flex-wrap: wrap;
     }
 
-    nav a {
-      color: var(--forest);
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--navy);
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 800;
+    }
+
+    .brand img {
+      width: 104px;
+      height: 44px;
+      object-fit: contain;
+      border-radius: 8px;
+      background: var(--white);
     }
 
     .nav-links {
       display: flex;
-      gap: 18px;
+      gap: 22px;
+      align-items: center;
       flex-wrap: wrap;
     }
 
+    .nav-links a {
+      color: var(--navy);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
     .hero {
-      background: linear-gradient(115deg, rgba(255,253,248,0.98) 0%, rgba(255,248,236,0.96) 58%, rgba(231,239,233,0.95) 100%);
-      padding: 72px 20px 52px;
+      color: var(--white);
+      background:
+        linear-gradient(120deg, rgba(16,40,54,0.98), rgba(30,97,123,0.92)),
+        repeating-linear-gradient(135deg, rgba(255,255,255,0.08) 0 1px, transparent 1px 18px);
+      padding: 76px 0 64px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.95fr);
-      gap: 40px;
+      grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.8fr);
+      gap: 48px;
       align-items: center;
     }
 
+    .hero-grid > * { min-width: 0; }
+
     .eyebrow {
-      color: var(--green);
-      font-size: 0.86rem;
-      font-weight: bold;
-      letter-spacing: 0;
+      color: #d9f2f7;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      margin: 0 0 12px;
+      margin: 0 0 14px;
     }
 
     h1 {
-      color: var(--forest);
-      font-size: clamp(2.25rem, 5.2vw, 4.4rem);
-      line-height: 1.02;
-      margin: 0 0 18px;
+      font-size: clamp(2.55rem, 5.4vw, 4.8rem);
+      line-height: 0.98;
+      letter-spacing: 0;
+      margin: 0 0 22px;
+      max-width: 100%;
+      overflow-wrap: break-word;
     }
 
+    h2 {
+      color: var(--navy);
+      font-size: clamp(1.7rem, 3vw, 2.35rem);
+      line-height: 1.14;
+      margin: 0 0 14px;
+    }
+
+    h3 { color: var(--navy); font-size: 1.08rem; margin: 0 0 8px; }
+    p { margin-top: 0; }
     .hero p {
       max-width: 720px;
-      color: #43505b;
+      color: #e8f3f6;
       font-size: 1.18rem;
-      margin: 0 0 24px;
+      margin-bottom: 24px;
+      overflow-wrap: break-word;
     }
 
     .actions {
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
-      margin-top: 24px;
+      margin-top: 26px;
     }
 
     .button {
@@ -119,95 +148,67 @@
       padding: 13px 20px;
       border-radius: 6px;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 800;
     }
 
-    .primary {
-      background: var(--forest);
-      color: white;
-    }
-
+    .primary { background: var(--white); color: var(--navy); }
     .secondary {
-      border: 1px solid var(--forest);
-      color: var(--forest);
-      background: transparent;
+      border: 1px solid rgba(255,255,255,0.52);
+      color: var(--white);
+      background: rgba(255,255,255,0.08);
     }
 
-    .panel {
+    .profile-panel {
       background: var(--white);
-      border: 1px solid var(--line);
+      color: var(--ink);
+      border-radius: 10px;
+      padding: 14px;
+      box-shadow: 0 24px 70px rgba(0,0,0,0.24);
+    }
+
+    .profile-panel img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
       border-radius: 8px;
-      padding: 24px;
-      box-shadow: 0 18px 40px rgba(31,41,51,0.08);
     }
 
-    .trust-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
+    .profile-details { padding: 18px 6px 4px; }
+    .profile-details strong,
+    .profile-details span { display: block; }
+    .profile-details span { color: var(--steel); }
 
-    .trust-list li {
-      padding: 10px 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .trust-list li:last-child {
-      border-bottom: 0;
-    }
-
-    section {
-      padding: 54px 20px;
-    }
-
-    .section-soft {
-      background: var(--soft);
-    }
+    section { padding: 62px 0; }
+    .section-mist { background: var(--mist); }
 
     .split {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(300px, 0.9fr);
-      gap: 34px;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 0.78fr);
+      gap: 36px;
       align-items: start;
     }
 
-    h2 {
-      color: var(--forest);
-      font-size: 1.85rem;
-      line-height: 1.18;
-      margin: 0 0 14px;
+    .panel,
+    .step {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 26px;
+      box-shadow: 0 16px 36px rgba(16,40,54,0.08);
     }
 
-    h3 {
-      color: var(--forest);
-      font-size: 1.12rem;
-      margin: 0 0 8px;
-    }
-
-    p {
-      margin-top: 0;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    li {
-      margin-bottom: 8px;
-    }
+    .panel p,
+    .step p,
+    .fine-print { color: var(--steel); }
+    ul { padding-left: 20px; }
+    li { margin-bottom: 8px; }
 
     .steps {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
-      margin-top: 24px;
-    }
-
-    .step {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 22px;
+      margin-top: 28px;
     }
 
     .step-number {
@@ -217,71 +218,77 @@
       align-items: center;
       justify-content: center;
       border-radius: 50%;
-      background: var(--forest);
-      color: white;
-      font-weight: bold;
+      background: var(--teal);
+      color: var(--white);
+      font-weight: 800;
       margin-bottom: 12px;
     }
 
     .callout {
-      background: var(--forest);
-      color: white;
+      background: var(--navy);
+      color: var(--white);
       border-radius: 8px;
-      padding: 28px;
+      padding: 32px;
+      border-left: 6px solid var(--teal-2);
     }
 
     .callout h2,
-    .callout a {
-      color: white;
-    }
-
-    .callout .primary {
-      background: white;
-      color: var(--forest);
-    }
-
-    .fine-print {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
+    .callout a { color: var(--white); }
+    .callout p { color: #dbe8ec; }
 
     footer {
       border-top: 1px solid var(--line);
-      background: #eee7dc;
-      padding: 30px 20px;
-      color: var(--muted);
+      background: #e7edf0;
+      padding: 32px 0;
+      color: var(--steel);
       font-size: 0.9rem;
     }
 
-    footer p {
-      margin: 0 0 14px;
-    }
-
-    footer p:last-child {
-      margin-bottom: 0;
-    }
+    footer p { margin: 0 0 14px; }
+    footer p:last-child { margin-bottom: 0; }
 
     @media (max-width: 860px) {
+      .wrap { width: min(100% - 28px, 1120px); }
+      nav {
+        min-height: 0;
+        padding: 12px 0;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .brand span {
+        min-width: 0;
+        overflow-wrap: anywhere;
+      }
+      .brand { width: 100%; }
+      .brand img { width: 96px; height: 40px; }
+      .nav-links {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px 14px;
+      }
+      .nav-links a { font-size: 0.92rem; }
+      .hero { padding-top: 44px; }
+      h1 {
+        font-size: clamp(1.85rem, 8vw, 2.35rem);
+        line-height: 1.04;
+      }
+      .hero p { font-size: 1.06rem; }
       .hero-grid,
       .split,
-      .steps {
-        grid-template-columns: 1fr;
-      }
-
-      .actions {
-        flex-direction: column;
-      }
-
-      .button {
-        width: 100%;
-      }
+      .steps { grid-template-columns: 1fr; }
+      .actions { flex-direction: column; }
+      .button { width: 100%; }
     }
   </style>
 </head>
 <body>
   <header>
-    <nav aria-label="Main navigation">
-      <a href="index.html">Derek Ehrsam Insurance Services</a>
+    <nav class="wrap" aria-label="Main navigation">
+      <a class="brand" href="index.html">
+        <img src="assets/wchg-logo.jpeg" alt="WCHG logo" />
+        <span>Derek Ehrsam Insurance Services</span>
+      </a>
       <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="#basics">Basics</a>
@@ -304,16 +311,13 @@
           </div>
         </div>
 
-        <aside class="panel" aria-label="License and contact details">
-          <h2>Derek Ehrsam</h2>
-          <ul class="trust-list">
-            <li><strong>CA license:</strong> 4451115</li>
-            <li><strong>Call/text:</strong> <a href="tel:+14088926419">(408) 892-6419</a></li>
-            <li><strong>Service area:</strong> California</li>
-          </ul>
-          <p class="fine-print">
-            This page is educational and does not recommend a specific policy without a conversation and review of your situation.
-          </p>
+        <aside class="profile-panel" aria-label="License and contact details">
+          <img src="assets/derek-selfie.jpeg" alt="Derek Ehrsam" />
+          <div class="profile-details">
+            <strong>Derek Ehrsam</strong>
+            <span>Insurance Services</span>
+            <span>CA license #4451115</span>
+          </div>
         </aside>
       </div>
     </section>
@@ -323,8 +327,7 @@
         <div>
           <h2>What we can talk through</h2>
           <p>
-            The first conversation is not about forcing a product. It is about understanding your goals,
-            what you want coverage or cash value planning to solve, and what questions are worth asking before applying.
+            The first conversation is not about forcing a product. It is about understanding your goals, what you want coverage or cash value planning to solve, and what questions are worth asking before applying.
           </p>
           <ul>
             <li>Term vs permanent life insurance basics</li>
@@ -347,14 +350,12 @@
       </div>
     </section>
 
-    <section id="advanced" class="section-soft">
+    <section id="advanced" class="section-mist">
       <div class="wrap split">
         <div>
           <h2>Indexed universal life and leveraged IUL conversations</h2>
           <p>
-            IUL and premium-financed planning can be interesting for the right household or business owner, but the details matter.
-            The conversation should include policy design, funding level, loan assumptions, interest-rate risk, collateral needs,
-            and what happens if the illustrated values do not perform as expected.
+            IUL and premium-financed planning can be interesting for the right household or business owner, but the details matter. The conversation should include policy design, funding level, loan assumptions, interest-rate risk, collateral needs, and what happens if the illustrated values do not perform as expected.
           </p>
           <ul>
             <li>IUL mechanics and illustration review</li>
@@ -367,9 +368,7 @@
         <aside class="panel">
           <h2>No hype, no shortcuts.</h2>
           <p>
-            IUL is life insurance, not a direct investment in an index. Non-guaranteed values can change.
-            Policy loans, leverage, and premium financing can create risk if the policy is underfunded, loan rates rise,
-            collateral requirements change, or the strategy is not monitored.
+            IUL is life insurance, not a direct investment in an index. Non-guaranteed values can change. Policy loans, leverage, and premium financing can create risk if the policy is underfunded, loan rates rise, collateral requirements change, or the strategy is not monitored.
           </p>
           <p class="fine-print">
             Any strategy should be reviewed with carrier illustrations and appropriate tax, legal, and financial professionals.
@@ -407,7 +406,7 @@
         <p>Call or text and mention what you are looking at: IUL, leveraged IUL, premium financing, estate liquidity, business planning, or retirement income planning.</p>
         <div class="actions" aria-label="Contact options">
           <a class="button primary" href="tel:+14088926419">Call now</a>
-          <a class="button primary" href="sms:+14088926419">Text now</a>
+          <a class="button secondary" href="sms:+14088926419">Text now</a>
         </div>
       </div>
     </section>
@@ -416,10 +415,8 @@
   <footer>
     <div class="wrap">
       <p><strong>SMS Privacy Notice:</strong> No mobile information will be shared with third parties/affiliates for marketing/promotional purposes. All other categories exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties.</p>
-
       <p><strong>SMS Consent:</strong> By providing a telephone number and submitting this form you are consenting to be contacted by SMS text message. Message &amp; data rates may apply. You can reply STOP to opt-out of further messaging.</p>
-
-      <p>© 2026 WC Holdings Group — All rights reserved.</p>
+      <p>&copy; 2026 WC Holdings Group. All rights reserved.</p>
     </div>
   </footer>
 </body>
