@@ -60,8 +60,8 @@
     }
 
     .brand img {
-      width: 104px;
-      height: 44px;
+      width: 178px;
+      height: 52px;
       object-fit: contain;
       border-radius: 8px;
       background: var(--white);
@@ -161,6 +161,12 @@
       border: 1px solid rgba(255,255,255,0.52);
       color: var(--white);
       background: rgba(255,255,255,0.08);
+    }
+
+    .panel .primary,
+    section:not(.hero) .primary {
+      background: var(--navy);
+      color: var(--white);
     }
 
     .portrait-card {
@@ -278,6 +284,7 @@
     .callout h2,
     .callout a { color: var(--white); }
     .callout p { color: #dbe8ec; }
+    .callout .primary { background: var(--white); color: var(--navy); }
 
     footer {
       border-top: 1px solid var(--line);
@@ -298,12 +305,18 @@
         flex-direction: column;
         align-items: flex-start;
       }
-      .brand span {
-        min-width: 0;
-        overflow-wrap: anywhere;
+      .brand {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
       }
-      .brand { width: 100%; }
-      .brand img { width: 96px; height: 40px; }
+      .brand span {
+        width: 100%;
+        font-size: 0.96rem;
+        line-height: 1.25;
+      }
+      .brand img { width: 148px; height: auto; }
       .nav-links {
         width: 100%;
         display: grid;
@@ -313,10 +326,10 @@
       .nav-links a { font-size: 0.92rem; }
       .hero { padding-top: 44px; }
       h1 {
-        font-size: clamp(1.85rem, 8vw, 2.35rem);
+        font-size: clamp(1.45rem, 6.3vw, 1.9rem);
         line-height: 1.04;
       }
-      .hero p { font-size: 1.06rem; }
+      .hero p { font-size: 0.98rem; }
       .hero-grid,
       .cards,
       .split,
@@ -330,7 +343,7 @@
   <header>
     <nav class="wrap" aria-label="Main navigation">
       <a class="brand" href="index.html">
-        <img src="assets/wchg-logo.jpeg" alt="WCHG logo" />
+        <img src="assets/wchg-logo.png" alt="WCHG logo" />
         <span>Derek Ehrsam Insurance Services</span>
       </a>
       <div class="nav-links">
@@ -358,7 +371,7 @@
         </div>
 
         <aside class="portrait-card" aria-label="Derek Ehrsam">
-          <img src="assets/derek-selfie.jpeg" alt="Derek Ehrsam" />
+          <img src="assets/derek-portrait.jpg" alt="Derek Ehrsam" />
           <div class="portrait-caption">
             <strong>Derek Ehrsam</strong>
             <span>CA license #4451115</span>
@@ -369,7 +382,7 @@
 
     <div class="trust-strip" aria-label="Quick details">
       <div class="trust-item"><strong>California licensed</strong><span>License #4451115</span></div>
-      <div class="trust-item"><strong>Direct access</strong><span>Call or text 408-892-6419</span></div>
+      <div class="trust-item"><strong>Direct access</strong><span>Call, text, or email Derek</span></div>
       <div class="trust-item"><strong>Planning first</strong><span>Education before recommendations</span></div>
     </div>
 
@@ -441,16 +454,17 @@
 
         <aside class="panel">
           <h2>First step</h2>
-          <p>Call or text and say what you are trying to figure out: IUL, leveraged IUL, premium financing, legacy planning, key person coverage, or annuity questions.</p>
+          <p>Call, text, or email and say what you are trying to figure out: IUL, leveraged IUL, premium financing, legacy planning, key person coverage, or annuity questions.</p>
           <div class="signature">
-            <img src="assets/derek-selfie.jpeg" alt="Derek Ehrsam" />
+            <img src="assets/derek-portrait.jpg" alt="Derek Ehrsam" />
             <div>
               <strong>Derek Ehrsam</strong>
-              <p class="fine-print">Insurance Services<br />CA license #4451115</p>
+              <p class="fine-print">Insurance Services<br />CA license #4451115<br /><a href="mailto:ehrsam_derek@nlgroupmail.com">ehrsam_derek@nlgroupmail.com</a></p>
             </div>
           </div>
           <div class="actions">
             <a class="button primary" href="tel:+14088926419">Call (408) 892-6419</a>
+            <a class="button primary" href="mailto:ehrsam_derek@nlgroupmail.com">Email Derek</a>
           </div>
         </aside>
       </div>
@@ -459,10 +473,11 @@
     <section>
       <div class="wrap callout">
         <h2>Want to talk through an advanced strategy?</h2>
-        <p>Call or text and mention what you are looking at: IUL, leveraged IUL, premium financing, estate liquidity, business coverage, or retirement income planning.</p>
+        <p>Call, text, or email and mention what you are looking at: IUL, leveraged IUL, premium financing, estate liquidity, business coverage, or retirement income planning.</p>
         <div class="actions">
           <a class="button primary" href="life-insurance-california.html">Open life insurance page</a>
           <a class="button secondary" href="sms:+14088926419">Text now</a>
+          <a class="button secondary" href="mailto:ehrsam_derek@nlgroupmail.com">Email now</a>
         </div>
       </div>
     </section>
