@@ -61,10 +61,8 @@
 
     .brand img {
       width: 178px;
-      height: 52px;
+      height: auto;
       object-fit: contain;
-      border-radius: 8px;
-      background: var(--white);
     }
 
     .nav-links {
@@ -171,26 +169,23 @@
 
     .portrait-card {
       position: relative;
-      padding: 12px;
-      border: 1px solid rgba(255,255,255,0.25);
-      border-radius: 10px;
-      background: rgba(255,255,255,0.1);
-      box-shadow: 0 24px 70px rgba(0,0,0,0.24);
+      justify-self: center;
+      width: min(100%, 360px);
+      display: grid;
+      justify-items: center;
     }
 
     .portrait-card img {
       display: block;
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      border-radius: 8px;
+      width: min(100%, 330px);
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 24px 36px rgba(0,0,0,0.28));
     }
 
     .portrait-caption {
-      position: absolute;
-      left: 28px;
-      right: 28px;
-      bottom: 28px;
+      width: 100%;
+      margin-top: -16px;
       padding: 16px;
       border-radius: 8px;
       background: rgba(16,40,54,0.86);
@@ -343,7 +338,7 @@
   <header>
     <nav class="wrap" aria-label="Main navigation">
       <a class="brand" href="index.html">
-        <img src="assets/wchg-logo.png" alt="WCHG logo" />
+        <img src="assets/wchg-logo.svg" alt="WCHG logo" />
         <span>Derek Ehrsam Insurance Services</span>
       </a>
       <div class="nav-links">
@@ -371,7 +366,7 @@
         </div>
 
         <aside class="portrait-card" aria-label="Derek Ehrsam">
-          <img src="assets/derek-portrait.jpg" alt="Derek Ehrsam" />
+          <img src="assets/derek-cutout.png" alt="Derek Ehrsam" />
           <div class="portrait-caption">
             <strong>Derek Ehrsam</strong>
             <span>CA license #4451115</span>

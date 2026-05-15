@@ -61,10 +61,8 @@
 
     .brand img {
       width: 178px;
-      height: 52px;
+      height: auto;
       object-fit: contain;
-      border-radius: 8px;
-      background: var(--white);
     }
 
     .nav-links {
@@ -164,25 +162,33 @@
     }
 
     .profile-panel {
-      background: var(--white);
-      color: var(--ink);
-      border-radius: 10px;
-      padding: 14px;
-      box-shadow: 0 24px 70px rgba(0,0,0,0.24);
+      color: var(--white);
+      width: min(100%, 360px);
+      justify-self: center;
+      display: grid;
+      justify-items: center;
     }
 
     .profile-panel img {
       display: block;
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      border-radius: 8px;
+      width: min(100%, 330px);
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 24px 36px rgba(0,0,0,0.28));
     }
 
-    .profile-details { padding: 18px 6px 4px; }
+    .profile-details {
+      width: 100%;
+      margin-top: -16px;
+      padding: 16px;
+      border-radius: 8px;
+      background: rgba(16,40,54,0.86);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
     .profile-details strong,
     .profile-details span { display: block; }
-    .profile-details span { color: var(--steel); }
+    .profile-details span,
+    .profile-details a { color: #d9f2f7; }
 
     section { padding: 62px 0; }
     .section-mist { background: var(--mist); }
@@ -298,7 +304,7 @@
   <header>
     <nav class="wrap" aria-label="Main navigation">
       <a class="brand" href="index.html">
-        <img src="assets/wchg-logo.png" alt="WCHG logo" />
+        <img src="assets/wchg-logo.svg" alt="WCHG logo" />
         <span>Derek Ehrsam Insurance Services</span>
       </a>
       <div class="nav-links">
@@ -325,7 +331,7 @@
         </div>
 
         <aside class="profile-panel" aria-label="License and contact details">
-          <img src="assets/derek-portrait.jpg" alt="Derek Ehrsam" />
+          <img src="assets/derek-cutout.png" alt="Derek Ehrsam" />
           <div class="profile-details">
             <strong>Derek Ehrsam</strong>
             <span>Insurance Services</span>
