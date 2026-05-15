@@ -170,22 +170,28 @@
     .portrait-card {
       position: relative;
       justify-self: center;
-      width: min(100%, 360px);
+      width: min(100%, 305px);
       display: grid;
       justify-items: center;
+      padding: 10px;
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 10px;
+      background: rgba(255,255,255,0.12);
+      box-shadow: 0 18px 44px rgba(0,0,0,0.18);
     }
 
     .portrait-card img {
       display: block;
-      width: min(100%, 330px);
-      height: auto;
-      object-fit: contain;
-      filter: drop-shadow(0 24px 36px rgba(0,0,0,0.28));
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center 40%;
+      border-radius: 8px;
     }
 
     .portrait-caption {
       width: 100%;
-      margin-top: -16px;
+      margin-top: 10px;
       padding: 16px;
       border-radius: 8px;
       background: rgba(16,40,54,0.86);
@@ -366,7 +372,7 @@
         </div>
 
         <aside class="portrait-card" aria-label="Derek Ehrsam">
-          <img src="assets/derek-cutout.png" alt="Derek Ehrsam" />
+          <img src="assets/derek-hero.jpg" alt="Derek Ehrsam" />
           <div class="portrait-caption">
             <strong>Derek Ehrsam</strong>
             <span>CA license #4451115</span>
