@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Campfire Alerts | Campsite Opening Alerts</title>
+  <meta name="description" content="Campfire watches supported California campground reservation systems and alerts you when a matching campsite opens.">
+  <link rel="canonical" href="https://wcholdingsgroup.com/campfire/">
+  <meta property="og:title" content="Campfire Alerts">
+  <meta property="og:description" content="Stop refreshing sold-out campgrounds.">
+  <meta property="og:url" content="https://wcholdingsgroup.com/campfire/">
+  <meta property="og:type" content="website">
+  <style>
+    :root {
+      color-scheme: dark;
+      --night: #071612;
+      --forest: #10352b;
+      --pine: #1a5540;
+      --ember: #ff8f45;
+      --flame: #ffd36b;
+      --cream: #fff6df;
+      --mist: #c9ddd4;
+      --line: rgba(255,255,255,.14);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--cream);
+      background:
+        radial-gradient(circle at 74% 16%, rgba(255,143,69,.16), transparent 24rem),
+        linear-gradient(145deg, var(--night), #0d241d 60%, #081713);
+      font: 17px/1.6 Arial, sans-serif;
+    }
+    a { color: inherit; }
+    .wrap { width: min(1100px, calc(100% - 40px)); margin: 0 auto; }
+    header { border-bottom: 1px solid var(--line); }
+    nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { font-weight: 900; letter-spacing: .01em; text-decoration: none; }
+    .brand span { color: var(--ember); }
+    .parent { color: var(--mist); font-size: .82rem; text-decoration: none; }
+    .hero { min-height: 70vh; display: grid; grid-template-columns: 1.2fr .8fr; gap: 56px; align-items: center; padding: 84px 0; }
+    .kicker { margin: 0 0 14px; color: var(--flame); font-size: .78rem; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; }
+    h1 { max-width: 760px; margin: 0; font-size: clamp(3rem, 8vw, 6.7rem); line-height: .94; letter-spacing: -.055em; }
+    .lead { max-width: 720px; margin: 28px 0 0; color: var(--mist); font-size: clamp(1.08rem, 2vw, 1.3rem); }
+    .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
+    .button { display: inline-flex; min-height: 50px; align-items: center; justify-content: center; padding: 12px 20px; border-radius: 999px; background: var(--ember); color: #1c130d; font-weight: 900; text-decoration: none; }
+    .button.secondary { border: 1px solid var(--line); background: transparent; color: var(--cream); }
+    .fire-card { position: relative; min-height: 430px; overflow: hidden; border: 1px solid var(--line); border-radius: 34px; background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); box-shadow: 0 30px 80px rgba(0,0,0,.35); }
+    .moon { position: absolute; top: 46px; right: 54px; width: 70px; height: 70px; border-radius: 50%; background: #fff2bf; box-shadow: 0 0 54px rgba(255,242,191,.25); }
+    .hill { position: absolute; right: -8%; bottom: 0; left: -8%; height: 48%; border-radius: 50% 50% 0 0; background: #0b211a; transform: rotate(-3deg); }
+    .flame { position: absolute; bottom: 96px; left: 50%; width: 94px; height: 130px; border-radius: 62% 38% 62% 38%; background: linear-gradient(35deg, var(--ember), var(--flame)); filter: drop-shadow(0 0 28px rgba(255,143,69,.65)); transform: translateX(-50%) rotate(45deg); }
+    .flame:after { content: ""; position: absolute; inset: 34px; border-radius: inherit; background: #fff2b2; }
+    .log { position: absolute; bottom: 66px; left: 50%; width: 150px; height: 18px; border-radius: 99px; background: #7c4931; transform-origin: center; }
+    .log.one { transform: translateX(-50%) rotate(13deg); }
+    .log.two { transform: translateX(-50%) rotate(-13deg); }
+    section.details { padding: 74px 0; border-top: 1px solid var(--line); }
+    .section-head { max-width: 700px; margin-bottom: 32px; }
+    h2 { margin: 0 0 12px; font-size: clamp(2rem, 4vw, 3.3rem); line-height: 1.08; letter-spacing: -.035em; }
+    .muted { color: var(--mist); }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .card { padding: 26px; border: 1px solid var(--line); border-radius: 20px; background: rgba(255,255,255,.045); }
+    .number { color: var(--ember); font-size: .78rem; font-weight: 900; letter-spacing: .12em; }
+    h3 { margin: 9px 0 8px; font-size: 1.2rem; }
+    .price { display: grid; grid-template-columns: 1fr auto; gap: 26px; align-items: center; margin-top: 24px; padding: 32px; border: 1px solid rgba(255,143,69,.4); border-radius: 24px; background: linear-gradient(120deg, rgba(255,143,69,.13), rgba(255,255,255,.035)); }
+    .price strong { display: block; font-size: clamp(2.1rem, 5vw, 4rem); line-height: 1; }
+    .fine { color: var(--mist); font-size: .84rem; }
+    footer { padding: 30px 0 46px; border-top: 1px solid var(--line); color: var(--mist); font-size: .82rem; }
+    footer .wrap { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    @media (max-width: 760px) {
+      .hero { grid-template-columns: 1fr; padding: 60px 0; }
+      .fire-card { min-height: 330px; }
+      .grid { grid-template-columns: 1fr; }
+      .price { grid-template-columns: 1fr; }
+      .parent { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="wrap" aria-label="Primary navigation">
+      <a class="brand" href="/campfire/">Campfire <span>Alerts</span></a>
+      <a class="parent" href="/">A WC Holdings Group product</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero wrap">
+      <div>
+        <p class="kicker">California campsite opening alerts</p>
+        <h1>Stop refreshing sold-out campgrounds.</h1>
+        <p class="lead">Campfire watches supported reservation systems for openings that match your trip and alerts you when one appears—then you reserve directly with the official campground provider.</p>
+        <div class="actions">
+          <a class="button" href="#how-it-works">See how it works</a>
+          <a class="button secondary" href="#founding-plan">Founding plan</a>
+        </div>
+      </div>
+      <div class="fire-card" aria-label="Campfire beneath a moonlit sky">
+        <div class="moon"></div><div class="hill"></div><div class="flame"></div><div class="log one"></div><div class="log two"></div>
+      </div>
+    </div>
+
+    <section class="details" id="how-it-works">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">A working prototype</p>
+          <h2>One alert instead of another refresh.</h2>
+          <p class="muted">Campfire is being prepared for a small public web beta. It alerts; it never books, holds inventory, or takes campground payments.</p>
+        </div>
+        <div class="grid">
+          <article class="card"><span class="number">01</span><h3>Pick your trip</h3><p class="muted">Choose a California destination, travel window, and the campsite details that matter.</p></article>
+          <article class="card"><span class="number">02</span><h3>Campfire watches</h3><p class="muted">The prototype checks supported Recreation.gov, ReserveCalifornia, and Santa Clara County listings.</p></article>
+          <article class="card"><span class="number">03</span><h3>You book officially</h3><p class="muted">When a match appears, the alert sends you back to the official provider to complete the reservation yourself.</p></article>
+        </div>
+        <div class="price" id="founding-plan">
+          <div>
+            <p class="kicker">Planned founding plan</p>
+            <strong>$4.99<span style="font-size:.34em">/month</span></strong>
+          </div>
+          <div>
+            <h3>Private beta opening next</h3>
+            <p class="muted">No checkout or subscription is live on this page yet. The first public beta opens only after customer isolation, email delivery, cancellation, and billing are fully tested.</p>
+          </div>
+        </div>
+        <p class="fine" style="margin-top:20px">Coverage varies by campground and provider. An alert is not a hold, booking, availability guarantee, or promise that a site will remain open when you click.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>Campfire Alerts is operated by WC Holdings Group LLC.</span>
+      <span><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
+    </div>
+  </footer>
+</body>
+</html>
