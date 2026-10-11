@@ -1,496 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Derek Ehrsam Insurance Services | Advanced Insurance Planning</title>
-  <meta name="description" content="Advanced insurance planning conversations for California families, business owners, and high-income households. CA license #4451115. Call or text 408-892-6419." />
-  <style>
-    :root {
-      color-scheme: light;
-      --ink: #101820;
-      --navy: #102836;
-      --teal: #1e617b;
-      --teal-2: #2f7d8f;
-      --steel: #6d7a82;
-      --mist: #eef3f5;
-      --paper: #fbfbf8;
-      --white: #ffffff;
-      --line: #d8e0e3;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      color: var(--ink);
-      background: var(--paper);
-      line-height: 1.55;
-      overflow-x: hidden;
-    }
-
-    a { color: var(--teal); }
-    .wrap { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(251, 251, 248, 0.94);
-      border-bottom: 1px solid var(--line);
-      backdrop-filter: blur(14px);
-    }
-
-    nav {
-      min-height: 76px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 18px;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      color: var(--navy);
-      text-decoration: none;
-      font-weight: 800;
-    }
-
-    .brand img {
-      width: 178px;
-      height: auto;
-      object-fit: contain;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 22px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .nav-links a {
-      color: var(--navy);
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 0.95rem;
-    }
-
-    .hero {
-      color: var(--white);
-      background:
-        linear-gradient(120deg, rgba(16,40,54,0.98), rgba(30,97,123,0.92)),
-        repeating-linear-gradient(135deg, rgba(255,255,255,0.08) 0 1px, transparent 1px 18px);
-      padding: 76px 0 64px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.8fr);
-      gap: 48px;
-      align-items: center;
-    }
-
-    .hero-grid > * { min-width: 0; }
-
-    .eyebrow {
-      color: #d9f2f7;
-      font-size: 0.82rem;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin: 0 0 14px;
-    }
-
-    h1 {
-      font-size: clamp(2.6rem, 5.6vw, 5rem);
-      line-height: 0.98;
-      letter-spacing: 0;
-      margin: 0 0 22px;
-      max-width: 100%;
-      overflow-wrap: break-word;
-    }
-
-    h2 {
-      color: var(--navy);
-      font-size: clamp(1.7rem, 3vw, 2.35rem);
-      line-height: 1.14;
-      margin: 0 0 14px;
-    }
-
-    h3 {
-      color: var(--navy);
-      font-size: 1.08rem;
-      margin: 0 0 8px;
-    }
-
-    p { margin-top: 0; }
-    .hero p {
-      max-width: 720px;
-      color: #e8f3f6;
-      font-size: 1.18rem;
-      margin-bottom: 24px;
-      overflow-wrap: break-word;
-    }
-
-    .actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 26px;
-    }
-
-    .button {
-      min-height: 50px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 13px 20px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 800;
-    }
-
-    .primary { background: var(--white); color: var(--navy); }
-    .secondary {
-      border: 1px solid rgba(255,255,255,0.52);
-      color: var(--white);
-      background: rgba(255,255,255,0.08);
-    }
-
-    .panel .primary,
-    section:not(.hero) .primary {
-      background: var(--navy);
-      color: var(--white);
-    }
-
-    .portrait-card {
-      position: relative;
-      justify-self: center;
-      width: min(100%, 305px);
-      display: grid;
-      justify-items: center;
-      padding: 10px;
-      border: 1px solid rgba(255,255,255,0.22);
-      border-radius: 10px;
-      background: rgba(255,255,255,0.12);
-      box-shadow: 0 18px 44px rgba(0,0,0,0.18);
-    }
-
-    .portrait-card img {
-      display: block;
-      width: 100%;
-      aspect-ratio: 4 / 5;
-      object-fit: cover;
-      object-position: center 40%;
-      border-radius: 8px;
-    }
-
-    .portrait-caption {
-      width: 100%;
-      margin-top: 10px;
-      padding: 16px;
-      border-radius: 8px;
-      background: rgba(16,40,54,0.86);
-      border: 1px solid rgba(255,255,255,0.2);
-    }
-
-    .portrait-caption strong,
-    .portrait-caption span { display: block; }
-    .portrait-caption span { color: #cde8ee; font-size: 0.94rem; }
-
-    .trust-strip {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1px;
-      background: var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .trust-item {
-      background: var(--white);
-      padding: 18px 20px;
-      text-align: center;
-    }
-
-    .trust-item strong { display: block; color: var(--navy); }
-    section { padding: 62px 0; }
-    .section-mist { background: var(--mist); }
-    .lede { max-width: 760px; color: var(--steel); font-size: 1.08rem; }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 28px;
-    }
-
-    .card {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 24px;
-    }
-
-    .card p,
-    .panel p,
-    .fine-print { color: var(--steel); }
-
-    .split {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(320px, 0.78fr);
-      gap: 36px;
-      align-items: start;
-    }
-
-    .panel {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 26px;
-      box-shadow: 0 16px 36px rgba(16,40,54,0.08);
-    }
-
-    .list { padding-left: 20px; margin-bottom: 0; }
-    .list li { margin-bottom: 8px; }
-
-    .signature {
-      display: grid;
-      grid-template-columns: 96px 1fr;
-      gap: 18px;
-      align-items: center;
-      margin-top: 20px;
-      padding-top: 20px;
-      border-top: 1px solid var(--line);
-    }
-
-    .signature img {
-      width: 96px;
-      height: 96px;
-      object-fit: cover;
-      border-radius: 8px;
-    }
-
-    .callout {
-      background: var(--navy);
-      color: var(--white);
-      border-radius: 8px;
-      padding: 32px;
-      border-left: 6px solid var(--teal-2);
-    }
-
-    .callout h2,
-    .callout a { color: var(--white); }
-    .callout p { color: #dbe8ec; }
-    .callout .primary { background: var(--white); color: var(--navy); }
-
-    footer {
-      border-top: 1px solid var(--line);
-      background: #e7edf0;
-      padding: 32px 0;
-      color: var(--steel);
-      font-size: 0.9rem;
-    }
-
-    footer p { margin: 0 0 14px; }
-    footer p:last-child { margin-bottom: 0; }
-
-    @media (max-width: 860px) {
-      .wrap { width: min(100% - 28px, 1120px); }
-      nav {
-        min-height: 0;
-        padding: 12px 0;
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .brand {
-        width: 100%;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 6px;
-      }
-      .brand span {
-        width: 100%;
-        font-size: 0.96rem;
-        line-height: 1.25;
-      }
-      .brand img { width: 148px; height: auto; }
-      .nav-links {
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 8px 14px;
-      }
-      .nav-links a { font-size: 0.92rem; }
-      .hero { padding-top: 44px; }
-      h1 {
-        font-size: clamp(1.45rem, 6.3vw, 1.9rem);
-        line-height: 1.04;
-      }
-      .hero p { font-size: 0.98rem; }
-      .hero-grid,
-      .cards,
-      .split,
-      .trust-strip { grid-template-columns: 1fr; }
-      .actions { flex-direction: column; }
-      .button { width: 100%; }
-    }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Derek Ehrsam Insurance Services | California Life Insurance</title>
+  <meta name="description" content="California life insurance, existing-policy, business and legacy planning conversations with Derek Ehrsam. CA license #4451115. Call or text 408-892-6419." />
   <link rel="canonical" href="https://wcholdingsgroup.com/" />
+  <meta name="theme-color" content="#f5f2eb" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Fraunces:opsz,wght@9..144,400;9..144,500&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="insurance.css" />
+  <script src="insurance.js" defer></script>
 </head>
-<body>
-  <header>
-    <nav class="wrap" aria-label="Main navigation">
-      <a class="brand" href="/">
-        <img src="assets/wchg-logo.svg" alt="WCHG logo" />
-        <span>Derek Ehrsam Insurance Services</span>
-      </a>
-      <div class="nav-links">
-        <a href="#planning">Planning</a>
-        <a href="#advanced">Advanced</a>
-        <a href="#about">About</a>
-        <a href="life-insurance-california.html">Life Insurance</a>
-      </div>
-    </nav>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="wrap hero-grid">
-        <div>
-          <p class="eyebrow">California insurance planning</p>
-          <h1>Life insurance, IUL, and legacy planning without the sales fog.</h1>
-          <p>
-            Talk through protection, cash value, indexed universal life, annuity, and business-continuity questions with a licensed California insurance professional.
-          </p>
-          <div class="actions">
-            <a class="button primary" href="tel:+14088926419">Call Derek</a>
-            <a class="button secondary" href="sms:+14088926419">Text Derek</a>
-          </div>
-        </div>
-
-        <aside class="portrait-card" aria-label="Derek Ehrsam">
-          <img src="assets/derek-hero.jpg" alt="Derek Ehrsam" />
-          <div class="portrait-caption">
-            <strong>Derek Ehrsam</strong>
-            <span>CA license #4451115</span>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <div class="trust-strip" aria-label="Quick details">
-      <div class="trust-item"><strong>California licensed</strong><span>License #4451115</span></div>
-      <div class="trust-item"><strong>Direct access</strong><span>Call, text, or email Derek</span></div>
-      <div class="trust-item"><strong>Planning first</strong><span>Education before recommendations</span></div>
+<body class="">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap masthead">
+      <a class="brand" href="/" aria-label="Derek Ehrsam Insurance Services home"><span class="brand-name">Derek Ehrsam<span class="brand-period">.</span></span><span class="brand-detail">Insurance Services</span></a>
+      <button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false">Menu <span class="menu-mark" aria-hidden="true"><i></i><i></i></span></button>
+      <nav id="primary-navigation" class="primary-nav" aria-label="Main navigation">
+        <a href="/#planning">Planning</a>
+<a href="/#process">The conversation</a>
+<a href="life-insurance-california.html">Life insurance</a>
+<a href="/#about">About Derek</a>
+        <a class="nav-contact" href="/#contact">Talk with Derek <span aria-hidden="true">↗</span></a>
+      </nav>
     </div>
-
-    <section id="planning">
-      <div class="wrap">
-        <h2>What you can ask about</h2>
-        <p class="lede">
-          You do not need to know every product detail before reaching out. The first conversation is about your income, family, assets, business, tax sensitivity, and what you want insurance planning to solve.
-        </p>
-        <div class="cards">
-          <article class="card">
-            <h3>Permanent life insurance</h3>
-            <p>Whole life, universal life, and indexed universal life conversations focused on structure, purpose, and long-term fit.</p>
-          </article>
-          <article class="card">
-            <h3>IUL and leverage concepts</h3>
-            <p>Policy design, cash value mechanics, policy loans, premium financing concepts, and the risks that need to be reviewed.</p>
-          </article>
-          <article class="card">
-            <h3>Business and legacy planning</h3>
-            <p>Key person coverage, buy-sell funding, estate liquidity, beneficiary planning, and family protection conversations.</p>
-          </article>
+  </header>
+  <main id="main">
+    <section class="hero wrap">
+      <div class="hero-copy"><p class="eyebrow">California life insurance · Personal &amp; business planning</p><h1>A clear view of your insurance.</h1><p class="hero-lede">Protecting your family. Understanding an existing policy. Planning for your business and legacy. Talk through the decisions with Derek Ehrsam.</p><div class="actions"><a class="button" href="tel:+14088926419">Call Derek <span aria-hidden="true">↗</span></a><a class="text-action" href="sms:+14088926419">Prefer to text? <span aria-hidden="true">↗</span></a></div><p class="hero-license">California insurance license #4451115<br />A direct conversation. An informed next step.</p></div>
+      <figure class="hero-portrait"><img src="assets/derek-canva-portrait.jpg" width="1000" height="1000" alt="Derek Ehrsam, California insurance agent" fetchpriority="high" /><figcaption><span>Derek Ehrsam</span><span>Insurance Services / Los Gatos, CA</span></figcaption></figure>
+    </section>
+    <section id="planning" class="section-space planning-section">
+      <div class="wrap"><div class="section-intro"><p class="eyebrow">A place to start</p><h2>What would you like<br />to work through?</h2><p>Insurance questions often begin with a change in life, an unfamiliar policy statement or a responsibility you want to plan for.</p></div>
+        <div class="topic-list">
+          <article class="topic-row"><span class="topic-number">01</span><h3>Protect the people<br />who depend on you.</h3><div><p>Income, housing, debts, education and caregiving all belong in the conversation. Start with who needs protection and how long those responsibilities may last.</p><a class="inline-link" href="life-insurance-questions-california.html#questions-heading">Organize your protection questions <span aria-hidden="true">↗</span></a></div></article>
+          <article class="topic-row"><span class="topic-number">02</span><h3>Understand the policy<br />you already have.</h3><div><p>Review what your coverage is intended to do, the premiums it needs and the assumptions behind its values. Term, permanent coverage and workplace benefits bring different questions.</p><a class="inline-link" href="life-insurance-california.html#basics">Explore the moving parts <span aria-hidden="true">↗</span></a></div></article>
+          <article class="topic-row"><span class="topic-number">03</span><h3>Plan for your business<br />and your legacy.</h3><div><p>Talk through key person coverage, buy-sell funding, beneficiary planning and estate liquidity. The planning objective comes before the policy design.</p><a class="inline-link" href="#contact">Discuss your planning question <span aria-hidden="true">↗</span></a></div></article>
         </div>
       </div>
     </section>
-
-    <section id="advanced" class="section-mist">
-      <div class="wrap split">
-        <div>
-          <h2>For higher-income households and business owners.</h2>
-          <p>
-            Advanced insurance planning is not about chasing a product. It is about coordinating protection, liquidity, tax sensitivity, legacy goals, and risk tolerance.
-          </p>
-          <ul class="list">
-            <li>Indexed universal life structure and illustration review</li>
-            <li>Overfunded policy design and cash value planning concepts</li>
-            <li>Premium financing and leveraged IUL conversations</li>
-            <li>Policy loan mechanics, downside risks, and stress testing</li>
-            <li>Legacy, estate liquidity, and business-continuity planning</li>
-          </ul>
-        </div>
-
-        <aside class="panel">
-          <h2>Important planning note</h2>
-          <p>
-            IUL values, crediting, loans, and policy performance are not guaranteed and depend on policy terms, costs, caps, participation rates, loan rates, and ongoing funding. Leveraged strategies add repayment and interest-rate risk.
-          </p>
-          <p class="fine-print">
-            Any discussion should be reviewed against a carrier illustration and your broader tax, legal, and financial situation.
-          </p>
-        </aside>
-      </div>
-    </section>
-
-    <section id="about">
-      <div class="wrap split">
-        <div>
-          <h2>A clearer way to evaluate advanced ideas.</h2>
-          <p>
-            Insurance can feel like a wall of product names, illustrations, opinions, and pressure. The goal here is to slow it down. We start with the planning problem, talk through the mechanics, and only continue if it makes sense.
-          </p>
-          <ul class="list">
-            <li>No pressure to know exactly what you need before reaching out</li>
-            <li>Phone/text first for easy follow-up</li>
-            <li>California-focused insurance conversations</li>
-            <li>Educational first step before any product recommendation or illustration review</li>
-          </ul>
-        </div>
-
-        <aside class="panel">
-          <h2>First step</h2>
-          <p>Call, text, or email and say what you are trying to figure out: IUL, leveraged IUL, premium financing, legacy planning, key person coverage, or annuity questions.</p>
-          <div class="signature">
-            <img src="assets/derek-portrait.jpg" alt="Derek Ehrsam" />
-            <div>
-              <strong>Derek Ehrsam</strong>
-              <p class="fine-print">Insurance Services<br />CA license #4451115<br /><a href="mailto:ehrsam_derek@nlgroupmail.com">ehrsam_derek@nlgroupmail.com</a></p>
-            </div>
-          </div>
-          <div class="actions">
-            <a class="button primary" href="tel:+14088926419">Call (408) 892-6419</a>
-            <a class="button primary" href="mailto:ehrsam_derek@nlgroupmail.com">Email Derek</a>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <section>
-      <div class="wrap callout">
-        <h2>Want to talk through an advanced strategy?</h2>
-        <p>Call, text, or email and mention what you are looking at: IUL, leveraged IUL, premium financing, estate liquidity, business coverage, or retirement income planning.</p>
-        <div class="actions">
-          <a class="button primary" href="life-insurance-california.html">Open life insurance page</a>
-          <a class="button secondary" href="sms:+14088926419">Text now</a>
-          <a class="button secondary" href="mailto:ehrsam_derek@nlgroupmail.com">Email now</a>
-        </div>
-      </div>
+    <section id="process" class="section-space process-section"><div class="wrap process-grid"><div><p class="eyebrow">The conversation</p><h2>First, make sense<br />of the question.</h2><p class="section-copy">You do not need to know every product name before reaching out. The first step is understanding what you want the insurance to accomplish.</p></div><ol class="process-list"><li><span>01 / Context</span><h3>Start with your responsibilities.</h3><p>Discuss your family or business, existing coverage, timeline and the premiums you can sustain.</p></li><li><span>02 / Tradeoffs</span><h3>Review the details that matter.</h3><p>Talk through coverage, flexibility, policy costs and the assumptions that deserve a closer look.</p></li><li><span>03 / Next step</span><h3>Consider whether a design fits.</h3><p>If a policy discussion is appropriate, review its illustration, requirements and risks before deciding whether to apply.</p></li></ol></div></section>
+    <section id="advanced" class="advanced-section section-space"><div class="wrap"><p class="eyebrow">Advanced planning, with the details in view</p><div class="advanced-grid"><div><h2>A policy illustration<br />is a starting point.</h2><p class="advanced-lede">IUL, cash value and premium financing require a careful look at how a policy is funded, how values are illustrated and what could change.</p><ul class="plain-list"><li>Indexed universal life structure and illustration review</li><li>Overfunded policy design and cash value planning concepts</li><li>Policy loans, premium financing and leveraged IUL</li><li>Legacy, estate liquidity and business continuity</li><li>Annuity and retirement-income planning questions</li></ul><a class="inline-link" href="life-insurance-california.html#advanced">Read the mechanics and risks <span aria-hidden="true">↗</span></a></div><aside class="risk-note" aria-labelledby="risk-heading"><p class="eyebrow">Understand the limitations</p><h3 id="risk-heading">The assumptions matter.</h3><p>IUL is life insurance, not a direct investment in an index. Non-guaranteed values, crediting and policy performance can change with policy costs, caps, participation rates, loan rates and ongoing funding.</p><p>Policy loans, leverage and premium financing add repayment, interest-rate and collateral risks. An underfunded or unmonitored policy may not perform as illustrated.</p><p>Review carrier illustrations with appropriate tax, legal and financial professionals in the context of your broader situation.</p></aside></div></div></section>
+    <section id="about" class="section-space about-section"><div class="wrap about-grid"><div><p class="eyebrow">About Derek</p><h2>Someone you can<br />ask directly.</h2></div><div><p class="large-copy">Derek Ehrsam Insurance Services is based in Los Gatos and serves eligible California residents.</p><p>Reach Derek by phone, text or email about family protection, a policy you want to understand, or a business and legacy question. The conversation begins with your objective, then the mechanics and tradeoffs of the insurance being considered.</p><p class="identity-line">Derek Ehrsam · California insurance license #4451115</p><a class="inline-link" href="#contact">Get in touch <span aria-hidden="true">↗</span></a></div></div></section>
+    <section class="reading-section section-space"><div class="wrap"><div class="reading-heading"><p class="eyebrow">Before we talk</p><h2>A little preparation<br />can go a long way.</h2></div><div class="reading-list"><a href="life-insurance-questions-california.html"><div><span class="reading-meta">01 / Protection questions</span><h3>Who depends on you, and for how long?</h3><p>A short guide to responsibilities, existing coverage and the questions to bring to a review.</p></div><span class="reading-arrow" aria-hidden="true">↗</span></a><a href="life-insurance-california.html"><div><span class="reading-meta">02 / Life insurance &amp; IUL</span><h3>Understand the design before the illustration.</h3><p>Term and permanent coverage, policy costs, cash value and advanced planning limitations.</p></div><span class="reading-arrow" aria-hidden="true">↗</span></a></div></div></section>
+    <section id="contact" class="contact-section section-space">
+      <div class="wrap contact-grid"><div><p class="eyebrow">A conversation with Derek</p><h2>Bring the question you have.</h2><p class="contact-copy">A family to protect. A policy to understand. A business decision to work through. Start with what matters to you; you do not need to arrive with a product in mind.</p><p class="contact-note">California insurance license #4451115<br />For eligible California residents.</p></div>
+      <div class="contact-methods"><a href="tel:+14088926419"><span class="contact-label">Call Derek</span><span class="contact-value">(408) 892-6419 <span aria-hidden="true">↗</span></span></a><a href="sms:+14088926419"><span class="contact-label">Text Derek</span><span class="contact-value">Text your question <span aria-hidden="true">↗</span></span></a><a href="mailto:ehrsam_derek@nlgroupmail.com"><span class="contact-label">Email Derek</span><span class="contact-email">ehrsam_derek@nlgroupmail.com <span aria-hidden="true">↗</span></span></a><p class="contact-privacy">Please keep an initial text or email to general questions. Do not send medical records, Social Security numbers or payment details. <a href="privacy.html">How your information is handled</a></p></div></div>
     </section>
   </main>
-
-  <footer>
+  <footer class="site-footer">
     <div class="wrap">
-      <p><strong>SMS Privacy Notice:</strong> No mobile information will be shared with third parties/affiliates for marketing/promotional purposes. All other categories exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties.</p>
-      <p><strong>SMS Consent:</strong> By providing a telephone number and submitting this form you are consenting to be contacted by SMS text message. Message &amp; data rates may apply. You can reply STOP to opt-out of further messaging.</p>
-      <p><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a> · <a href="ad-ops.html">Ad Operations Integration</a></p>
-      <p>&copy; 2026 WC Holdings Group. All rights reserved.</p>
+      <div class="footer-top"><a class="footer-name" href="/">Derek Ehrsam<br /><span>Insurance Services</span></a><p>California insurance license #4451115<br />Principal place of business: Los Gatos, California</p><nav aria-label="Footer navigation"><a href="life-insurance-california.html">Life insurance &amp; IUL</a><a href="life-insurance-questions-california.html">Questions to start with</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a></nav></div>
+      <div class="footer-notices">
+        <p><strong>Licensed identity &amp; insurance solicitation.</strong> Derek Ehrsam · Derek Ehrsam Insurance Services · California insurance license #4451115. Insurance services offered to eligible California residents. This website provides general educational information and invites a conversation with a licensed insurance agent. It does not recommend a specific carrier or policy, determine suitability or underwriting eligibility, or promise approval, pricing, savings, returns or outcomes. Availability and eligibility vary by state and individual circumstances. Coverage is never bound through this website.</p>
+        <p><strong>Text messaging.</strong> If you initiate a text, you consent to receive replies about your inquiry. Message and data rates may apply. Reply STOP to opt out. Mobile opt-in data will not be sold or shared with third parties for their marketing.</p>
+        <p><strong>Business address.</strong> 100 Broadway, Apt 2, Los Gatos, CA 95030</p>
+      </div>
+      <div class="footer-bottom"><p>© 2026 WC Holdings Group, LLC. All rights reserved.</p><a href="ad-ops.html">Ad Operations Integration <span aria-hidden="true">↗</span></a></div>
     </div>
   </footer>
 </body>

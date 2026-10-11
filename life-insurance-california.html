@@ -1,452 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Life Insurance and IUL Planning | Derek Ehrsam Insurance Services</title>
-  <meta name="description" content="Talk through life insurance, indexed universal life, and advanced planning concepts with Derek Ehrsam Insurance Services. CA license #4451115. Call or text 408-892-6419." />
-  <style>
-    :root {
-      color-scheme: light;
-      --ink: #101820;
-      --navy: #102836;
-      --teal: #1e617b;
-      --teal-2: #2f7d8f;
-      --steel: #6d7a82;
-      --mist: #eef3f5;
-      --paper: #fbfbf8;
-      --white: #ffffff;
-      --line: #d8e0e3;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      color: var(--ink);
-      background: var(--paper);
-      line-height: 1.55;
-      overflow-x: hidden;
-    }
-
-    a { color: var(--teal); }
-    .wrap { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(251, 251, 248, 0.94);
-      border-bottom: 1px solid var(--line);
-      backdrop-filter: blur(14px);
-    }
-
-    nav {
-      min-height: 76px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 18px;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      color: var(--navy);
-      text-decoration: none;
-      font-weight: 800;
-    }
-
-    .brand img {
-      width: 178px;
-      height: auto;
-      object-fit: contain;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 22px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .nav-links a {
-      color: var(--navy);
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 0.95rem;
-    }
-
-    .hero {
-      color: var(--white);
-      background:
-        linear-gradient(120deg, rgba(16,40,54,0.98), rgba(30,97,123,0.92)),
-        repeating-linear-gradient(135deg, rgba(255,255,255,0.08) 0 1px, transparent 1px 18px);
-      padding: 76px 0 64px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.8fr);
-      gap: 48px;
-      align-items: center;
-    }
-
-    .hero-grid > * { min-width: 0; }
-
-    .eyebrow {
-      color: #d9f2f7;
-      font-size: 0.82rem;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin: 0 0 14px;
-    }
-
-    h1 {
-      font-size: clamp(2.55rem, 5.4vw, 4.8rem);
-      line-height: 0.98;
-      letter-spacing: 0;
-      margin: 0 0 22px;
-      max-width: 100%;
-      overflow-wrap: break-word;
-    }
-
-    h2 {
-      color: var(--navy);
-      font-size: clamp(1.7rem, 3vw, 2.35rem);
-      line-height: 1.14;
-      margin: 0 0 14px;
-    }
-
-    h3 { color: var(--navy); font-size: 1.08rem; margin: 0 0 8px; }
-    p { margin-top: 0; }
-    .hero p {
-      max-width: 720px;
-      color: #e8f3f6;
-      font-size: 1.18rem;
-      margin-bottom: 24px;
-      overflow-wrap: break-word;
-    }
-
-    .actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 26px;
-    }
-
-    .button {
-      min-height: 50px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 13px 20px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 800;
-    }
-
-    .primary { background: var(--white); color: var(--navy); }
-    .secondary {
-      border: 1px solid rgba(255,255,255,0.52);
-      color: var(--white);
-      background: rgba(255,255,255,0.08);
-    }
-
-    section:not(.hero) .primary {
-      background: var(--navy);
-      color: var(--white);
-    }
-
-    .profile-panel {
-      color: var(--white);
-      width: min(100%, 305px);
-      justify-self: center;
-      display: grid;
-      justify-items: center;
-      padding: 10px;
-      border: 1px solid rgba(255,255,255,0.22);
-      border-radius: 10px;
-      background: rgba(255,255,255,0.12);
-      box-shadow: 0 18px 44px rgba(0,0,0,0.18);
-    }
-
-    .profile-panel img {
-      display: block;
-      width: 100%;
-      aspect-ratio: 4 / 5;
-      object-fit: cover;
-      object-position: center 40%;
-      border-radius: 8px;
-    }
-
-    .profile-details {
-      width: 100%;
-      margin-top: 10px;
-      padding: 16px;
-      border-radius: 8px;
-      background: rgba(16,40,54,0.86);
-      border: 1px solid rgba(255,255,255,0.2);
-    }
-    .profile-details strong,
-    .profile-details span { display: block; }
-    .profile-details span,
-    .profile-details a { color: #d9f2f7; }
-
-    section { padding: 62px 0; }
-    .section-mist { background: var(--mist); }
-
-    .split {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(320px, 0.78fr);
-      gap: 36px;
-      align-items: start;
-    }
-
-    .panel,
-    .step {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 26px;
-      box-shadow: 0 16px 36px rgba(16,40,54,0.08);
-    }
-
-    .panel p,
-    .step p,
-    .fine-print { color: var(--steel); }
-    ul { padding-left: 20px; }
-    li { margin-bottom: 8px; }
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 28px;
-    }
-
-    .step-number {
-      width: 34px;
-      height: 34px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      background: var(--teal);
-      color: var(--white);
-      font-weight: 800;
-      margin-bottom: 12px;
-    }
-
-    .callout {
-      background: var(--navy);
-      color: var(--white);
-      border-radius: 8px;
-      padding: 32px;
-      border-left: 6px solid var(--teal-2);
-    }
-
-    .callout h2,
-    .callout a { color: var(--white); }
-    .callout p { color: #dbe8ec; }
-    .callout .primary { background: var(--white); color: var(--navy); }
-
-    footer {
-      border-top: 1px solid var(--line);
-      background: #e7edf0;
-      padding: 32px 0;
-      color: var(--steel);
-      font-size: 0.9rem;
-    }
-
-    footer p { margin: 0 0 14px; }
-    footer p:last-child { margin-bottom: 0; }
-
-    @media (max-width: 860px) {
-      .wrap { width: min(100% - 28px, 1120px); }
-      nav {
-        min-height: 0;
-        padding: 12px 0;
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .brand {
-        width: 100%;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 6px;
-      }
-      .brand span {
-        width: 100%;
-        font-size: 0.96rem;
-        line-height: 1.25;
-      }
-      .brand img { width: 148px; height: auto; }
-      .nav-links {
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 8px 14px;
-      }
-      .nav-links a { font-size: 0.92rem; }
-      .hero { padding-top: 44px; }
-      h1 {
-        font-size: clamp(1.45rem, 6.3vw, 1.9rem);
-        line-height: 1.04;
-      }
-      .hero p { font-size: 0.98rem; }
-      .hero-grid,
-      .split,
-      .steps { grid-template-columns: 1fr; }
-      .actions { flex-direction: column; }
-      .button { width: 100%; }
-    }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Life Insurance &amp; IUL Planning in California | Derek Ehrsam</title>
+  <meta name="description" content="Understand term and permanent life insurance, IUL illustrations, policy costs, loans and premium-financing risks. Derek Ehrsam, CA license #4451115." />
   <link rel="canonical" href="https://wcholdingsgroup.com/life-insurance-california.html" />
+  <meta name="theme-color" content="#f5f2eb" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Fraunces:opsz,wght@9..144,400;9..144,500&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="insurance.css" />
+  <script src="insurance.js" defer></script>
 </head>
-<body>
-  <header>
-    <nav class="wrap" aria-label="Main navigation">
-      <a class="brand" href="/">
-        <img src="assets/wchg-logo.svg" alt="WCHG logo" />
-        <span>Derek Ehrsam Insurance Services</span>
-      </a>
-      <div class="nav-links">
-        <a href="/">Home</a>
-        <a href="#basics">Basics</a>
-        <a href="#advanced">Advanced</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </nav>
+<body class="education-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap masthead">
+      <a class="brand" href="/" aria-label="Derek Ehrsam Insurance Services home"><span class="brand-name">Derek Ehrsam<span class="brand-period">.</span></span><span class="brand-detail">Insurance Services</span></a>
+      <button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false">Menu <span class="menu-mark" aria-hidden="true"><i></i><i></i></span></button>
+      <nav id="primary-navigation" class="primary-nav" aria-label="Main navigation">
+        <a href="/#planning">Planning</a>
+<a href="/#process">The conversation</a>
+<a href="life-insurance-california.html" aria-current="page">Life insurance</a>
+<a href="/#about">About Derek</a>
+        <a class="nav-contact" href="/#contact">Talk with Derek <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
   </header>
-
-  <main>
-    <section class="hero">
-      <div class="wrap hero-grid">
-        <div>
-          <p class="eyebrow">California life insurance and IUL planning</p>
-          <h1>Advanced life insurance ideas, explained without the hype.</h1>
-          <p>Derek Ehrsam Insurance Services helps California families, high-income households, and business owners talk through life insurance, IUL, and planning concepts before choosing a policy.</p>
-          <div class="actions" aria-label="Contact options">
-            <a class="button primary" href="tel:+14088926419">Call (408) 892-6419</a>
-            <a class="button secondary" href="sms:+14088926419">Text (408) 892-6419</a>
-            <a class="button secondary" href="mailto:ehrsam_derek@nlgroupmail.com">Email Derek</a>
-          </div>
-        </div>
-
-        <aside class="profile-panel" aria-label="License and contact details">
-          <img src="assets/derek-hero.jpg" alt="Derek Ehrsam" />
-          <div class="profile-details">
-            <strong>Derek Ehrsam</strong>
-            <span>Insurance Services</span>
-            <span>CA license #4451115</span>
-            <span><a href="mailto:ehrsam_derek@nlgroupmail.com">ehrsam_derek@nlgroupmail.com</a></span>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <section id="basics">
-      <div class="wrap split">
-        <div>
-          <h2>What we can talk through</h2>
-          <p>
-            The first conversation is not about forcing a product. It is about understanding your goals, what you want coverage or cash value planning to solve, and what questions are worth asking before applying.
-          </p>
-          <ul>
-            <li>Term vs permanent life insurance basics</li>
-            <li>Indexed universal life structure and illustrations</li>
-            <li>Overfunded policy design and cash value planning concepts</li>
-            <li>Policy loans, costs, caps, participation rates, and risks</li>
-            <li>Legacy, estate liquidity, business, and beneficiary planning</li>
-          </ul>
-        </div>
-
-        <aside class="panel">
-          <h2>Good advanced planning questions</h2>
-          <ul>
-            <li>What is the real planning objective?</li>
-            <li>How much premium flexibility do you need?</li>
-            <li>What assumptions are shown in the illustration?</li>
-            <li>How would the policy behave under stress?</li>
-          </ul>
-        </aside>
-      </div>
-    </section>
-
-    <section id="advanced" class="section-mist">
-      <div class="wrap split">
-        <div>
-          <h2>Indexed universal life and leveraged IUL conversations</h2>
-          <p>
-            IUL and premium-financed planning can be interesting for the right household or business owner, but the details matter. The conversation should include policy design, funding level, loan assumptions, interest-rate risk, collateral needs, and what happens if the illustrated values do not perform as expected.
-          </p>
-          <ul>
-            <li>IUL mechanics and illustration review</li>
-            <li>Premium financing and leveraged policy concepts</li>
-            <li>Loan strategy, liquidity, and repayment considerations</li>
-            <li>Tax-sensitive retirement and legacy planning discussions</li>
-          </ul>
-        </div>
-
-        <aside class="panel">
-          <h2>No hype, no shortcuts.</h2>
-          <p>
-            IUL is life insurance, not a direct investment in an index. Non-guaranteed values can change. Policy loans, leverage, and premium financing can create risk if the policy is underfunded, loan rates rise, collateral requirements change, or the strategy is not monitored.
-          </p>
-          <p class="fine-print">
-            Any strategy should be reviewed with carrier illustrations and appropriate tax, legal, and financial professionals.
-          </p>
-        </aside>
-      </div>
-    </section>
-
-    <section>
-      <div class="wrap">
-        <h2>A simple first conversation</h2>
-        <div class="steps">
-          <div class="step">
-            <span class="step-number">1</span>
-            <h3>Define the planning objective</h3>
-            <p>Protection, cash value flexibility, legacy liquidity, business planning, or income planning all lead to different designs.</p>
-          </div>
-          <div class="step">
-            <span class="step-number">2</span>
-            <h3>Review the moving parts</h3>
-            <p>We can talk through premiums, policy costs, crediting methods, caps, participation rates, and loan assumptions.</p>
-          </div>
-          <div class="step">
-            <span class="step-number">3</span>
-            <h3>Stress test before moving forward</h3>
-            <p>If there is a fit, the next step is reviewing an illustration and understanding the risks before applying.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="wrap callout">
-        <h2>Want to talk through IUL or an advanced strategy?</h2>
-        <p>Call, text, or email and mention what you are looking at: IUL, leveraged IUL, premium financing, estate liquidity, business planning, or retirement income planning.</p>
-        <div class="actions" aria-label="Contact options">
-          <a class="button primary" href="tel:+14088926419">Call now</a>
-          <a class="button secondary" href="sms:+14088926419">Text now</a>
-          <a class="button secondary" href="mailto:ehrsam_derek@nlgroupmail.com">Email now</a>
-        </div>
-      </div>
+  <main id="main">
+    <section class="page-hero wrap"><a class="breadcrumb" href="/">Home <span aria-hidden="true">/</span></a><p class="eyebrow">Field notes / Life insurance &amp; IUL</p><h1>Understand the design.<br />Then the illustration.</h1><div class="page-hero-bottom"><p>Life insurance decisions involve more than a projected value. Start with the protection you need, the premiums you can sustain and the details that could change.</p><a class="text-action" href="#contact">Talk through your question <span aria-hidden="true">↗</span></a></div><nav class="article-nav" aria-label="On this page"><a href="#basics">Coverage basics</a><a href="#advanced">IUL &amp; financing</a><a href="#policy-questions">Questions to ask</a><a href="#contact">Contact Derek</a></nav></section>
+    <section id="basics" class="section-space"><div class="wrap editorial-grid"><div class="editorial-label"><p class="eyebrow">01 / Coverage basics</p><h2>Begin with the<br />planning objective.</h2></div><div class="editorial-body"><p class="large-copy">Protection, cash value flexibility, business continuity and legacy liquidity can lead to different policy designs.</p><p>The first conversation considers who or what needs protection, for how long, your existing coverage and how much premium flexibility you need.</p><div class="comparison"><article><p class="eyebrow">A defined period</p><h3>Term life insurance</h3><p>Term coverage provides protection for a specified period. It generally has no cash value. Ask about the term length, premium schedule, renewal and any conversion provisions.</p></article><article><p class="eyebrow">Longer-term design</p><h3>Permanent life insurance</h3><p>Permanent policies combine a death benefit with a cash value component. Whole life, universal life and IUL have different structures; ongoing coverage depends on the policy terms and required funding.</p></article></div><p class="article-note">This is general education, not a recommendation of a specific carrier or policy. A complete licensed review considers your circumstances and the actual contract.</p></div></div></section>
+    <section id="advanced" class="advanced-section section-space"><div class="wrap"><p class="eyebrow">02 / IUL, cash value &amp; premium financing</p><div class="advanced-grid"><div><h2>Look closely at<br />the moving parts.</h2><p class="advanced-lede">Indexed universal life and premium-financed planning need more than an optimistic illustration.</p><ul class="plain-list"><li><strong>Policy structure.</strong> Understand the death benefit, policy costs, crediting methods, caps and participation rates.</li><li><strong>Funding.</strong> Review planned premiums, overfunded policy design concepts and what happens if funding changes.</li><li><strong>Loans.</strong> Discuss loan assumptions, liquidity, repayment and the effect on the policy.</li><li><strong>Financing.</strong> Examine interest-rate exposure, collateral requirements and how a leveraged strategy would be monitored.</li></ul></div><aside class="risk-note" aria-labelledby="life-risk-heading"><p class="eyebrow">Keep the risks beside the idea</p><h3 id="life-risk-heading">Projected values are not promises.</h3><p>IUL is life insurance, not a direct investment in an index. Non-guaranteed values can change. Policy costs, caps, participation rates, loan rates and ongoing funding affect results.</p><p>Policy loans, leverage and premium financing can create risk if the policy is underfunded, loan rates rise, collateral requirements change or the strategy is not monitored. Financing also adds repayment obligations.</p><p>Any strategy should be reviewed with carrier illustrations and appropriate tax, legal and financial professionals.</p></aside></div></div></section>
+    <section id="policy-questions" class="section-space"><div class="wrap editorial-grid"><div class="editorial-label"><p class="eyebrow">03 / Questions worth asking</p><h2>Read beyond<br />the headline number.</h2><p class="section-copy">Use these questions to prepare for a policy discussion. Open any topic for more detail.</p></div><div class="faq-list"><details open><summary>What is guaranteed, and what is illustrated?</summary><div class="faq-answer"><p>Ask which values and benefits are guaranteed by the contract and which rely on assumptions that can change. Review the guaranteed and non-guaranteed columns, not just the illustrated outcome.</p></div></details><details><summary>What happens if I change the premiums?</summary><div class="faq-answer"><p>Ask how reduced, delayed or discontinued funding would affect coverage, policy values and the premiums needed later. Premium flexibility should be reviewed alongside the policy costs and funding requirements.</p></div></details><details><summary>How should policy loans be reviewed?</summary><div class="faq-answer"><p>Review the loan interest rate, how loans affect policy values and benefits, and what happens as the balance grows. Ask for scenarios with different loan and crediting assumptions and a clear discussion of repayment and lapse risk.</p></div></details><details><summary>What if I already have a policy?</summary><div class="faq-answer"><p>Begin with the existing contract and a current policy statement or illustration. Understand its coverage, premiums, costs and provisions before considering a change. A new illustration alone is not a reason to replace coverage.</p></div></details><details><summary>What about business, legacy or annuity questions?</summary><div class="faq-answer"><p>Key person protection, buy-sell funding, estate liquidity, beneficiary planning and retirement-income questions begin with different objectives. Coordinate the insurance discussion with your appropriate legal, tax and financial professionals.</p></div></details></div></div></section>
+    <section class="resource-section"><div class="wrap resource-row"><p><span class="eyebrow">Independent consumer reading</span>For more background, see the <a href="https://www.insurance.ca.gov/01-consumers/105-type/95-guides/07-life/life-ins-guide.cfm">California Department of Insurance life insurance guide</a> and the <a href="https://content.naic.org/insurance-topics/life-insurance-illustrations">NAIC overview of policy illustrations</a>.</p></div></section>
+    <section id="contact" class="contact-section section-space">
+      <div class="wrap contact-grid"><div><p class="eyebrow">A conversation with Derek</p><h2>A policy question is a good place to start.</h2><p class="contact-copy">Call, text or email Derek about term or permanent coverage, IUL, policy loans, premium financing, business planning or legacy liquidity. Begin with the question you want to understand.</p><p class="contact-note">California insurance license #4451115<br />For eligible California residents.</p></div>
+      <div class="contact-methods"><a href="tel:+14088926419"><span class="contact-label">Call Derek</span><span class="contact-value">(408) 892-6419 <span aria-hidden="true">↗</span></span></a><a href="sms:+14088926419"><span class="contact-label">Text Derek</span><span class="contact-value">Text your question <span aria-hidden="true">↗</span></span></a><a href="mailto:ehrsam_derek@nlgroupmail.com"><span class="contact-label">Email Derek</span><span class="contact-email">ehrsam_derek@nlgroupmail.com <span aria-hidden="true">↗</span></span></a><p class="contact-privacy">Please keep an initial text or email to general questions. Do not send medical records, Social Security numbers or payment details. <a href="privacy.html">How your information is handled</a></p></div></div>
     </section>
   </main>
-
-  <footer>
+  <footer class="site-footer">
     <div class="wrap">
-      <p><strong>SMS Privacy Notice:</strong> No mobile information will be shared with third parties/affiliates for marketing/promotional purposes. All other categories exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties.</p>
-      <p><strong>SMS Consent:</strong> By providing a telephone number and submitting this form you are consenting to be contacted by SMS text message. Message &amp; data rates may apply. You can reply STOP to opt-out of further messaging.</p>
-      <p><strong>Business address:</strong> 100 Broadway, Apt 2, Los Gatos, CA 95030</p>
-      <p><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a> · <a href="ad-ops.html">Ad Operations Integration</a></p>
-      <p>&copy; 2026 WC Holdings Group. All rights reserved.</p>
+      <div class="footer-top"><a class="footer-name" href="/">Derek Ehrsam<br /><span>Insurance Services</span></a><p>California insurance license #4451115<br />Principal place of business: Los Gatos, California</p><nav aria-label="Footer navigation"><a href="life-insurance-california.html">Life insurance &amp; IUL</a><a href="life-insurance-questions-california.html">Questions to start with</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a></nav></div>
+      <div class="footer-notices">
+        <p><strong>Licensed identity &amp; insurance solicitation.</strong> Derek Ehrsam · Derek Ehrsam Insurance Services · California insurance license #4451115. Insurance services offered to eligible California residents. This website provides general educational information and invites a conversation with a licensed insurance agent. It does not recommend a specific carrier or policy, determine suitability or underwriting eligibility, or promise approval, pricing, savings, returns or outcomes. Availability and eligibility vary by state and individual circumstances. Coverage is never bound through this website.</p>
+        <p><strong>Text messaging.</strong> If you initiate a text, you consent to receive replies about your inquiry. Message and data rates may apply. Reply STOP to opt out. Mobile opt-in data will not be sold or shared with third parties for their marketing.</p>
+        <p><strong>Business address.</strong> 100 Broadway, Apt 2, Los Gatos, CA 95030</p>
+      </div>
+      <div class="footer-bottom"><p>© 2026 WC Holdings Group, LLC. All rights reserved.</p><a href="ad-ops.html">Ad Operations Integration <span aria-hidden="true">↗</span></a></div>
     </div>
   </footer>
 </body>

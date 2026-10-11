@@ -1,164 +1,52 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Life Insurance Questions for California Families | Derek Ehrsam</title>
-  <meta name="description" content="A carrier-neutral, licensed review of life insurance questions for California families. Derek Ehrsam Insurance Services, CA license #4451115." />
-  <style>
-    :root {
-      --ink: #18201d;
-      --muted: #52605a;
-      --paper: #f7f5ef;
-      --card: #ffffff;
-      --green: #245c46;
-      --green-dark: #173f31;
-      --line: #dce2dd;
-      --gold: #d7a84f;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      color: var(--ink);
-      background: var(--paper);
-      font: 17px/1.6 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-    a { color: inherit; }
-    .wrap { width: min(1080px, calc(100% - 40px)); margin: 0 auto; }
-    header { background: #fff; border-bottom: 1px solid var(--line); }
-    nav { min-height: 74px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 800; }
-    .brand img { width: 42px; height: 42px; }
-    .nav-link { color: var(--green-dark); font-weight: 750; }
-    .hero { padding: 76px 0 56px; background: linear-gradient(145deg, #f8f6f0 0%, #e8f0eb 100%); }
-    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(260px, .65fr); gap: 50px; align-items: center; }
-    .eyebrow { margin: 0 0 10px; color: var(--green); font-size: .8rem; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
-    h1, h2, h3 { margin: 0 0 .55em; line-height: 1.12; }
-    h1 { max-width: 760px; font-size: clamp(2.45rem, 6vw, 4.8rem); letter-spacing: -.045em; }
-    h2 { font-size: clamp(1.75rem, 3vw, 2.65rem); }
-    p { margin: 0 0 1em; }
-    .hero-copy { max-width: 720px; color: var(--muted); font-size: 1.15rem; }
-    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 26px 0 14px; }
-    .button { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; padding: 11px 20px; border: 1px solid var(--green); border-radius: 999px; text-decoration: none; font-weight: 850; }
-    .primary { color: white; background: var(--green); }
-    .secondary { color: var(--green-dark); background: transparent; }
-    .profile { padding: 22px; background: rgba(255,255,255,.9); border: 1px solid var(--line); border-radius: 22px; box-shadow: 0 20px 50px rgba(27,53,41,.08); }
-    .profile img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: center 24%; border-radius: 15px; }
-    .profile strong, .profile span { display: block; }
-    .profile strong { margin-top: 14px; font-size: 1.15rem; }
-    .profile span { color: var(--muted); }
-    section { padding: 64px 0; }
-    .question-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-    .card { padding: 28px; background: var(--card); border: 1px solid var(--line); border-radius: 18px; }
-    .number { display: inline-grid; width: 36px; height: 36px; margin-bottom: 18px; place-items: center; color: var(--green-dark); background: #edf4ef; border-radius: 50%; font-weight: 900; }
-    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: start; }
-    .mist { background: #eaf1ed; }
-    ul { padding-left: 1.25em; }
-    li { margin: .5em 0; }
-    .notice { padding: 25px; border-left: 5px solid var(--gold); background: #fffaf0; border-radius: 8px 16px 16px 8px; }
-    .callout { padding: 38px; color: white; background: var(--green-dark); border-radius: 24px; }
-    .callout p { max-width: 720px; color: #d9e7df; }
-    .callout .primary { color: var(--green-dark); background: white; border-color: white; }
-    .callout .secondary { color: white; border-color: #a8c6b7; }
-    footer { padding: 35px 0 48px; color: var(--muted); background: #fff; border-top: 1px solid var(--line); font-size: .86rem; }
-    footer p { margin: .55em 0; }
-    @media (max-width: 760px) {
-      .wrap { width: min(100% - 28px, 1080px); }
-      .hero { padding-top: 48px; }
-      .hero-grid, .question-grid, .split { grid-template-columns: 1fr; }
-      .actions { flex-direction: column; }
-      .button { width: 100%; }
-      .nav-link { display: none; }
-    }
-  </style>
+  <meta name="description" content="Organize your protection questions, existing coverage and planning timeline before a licensed life insurance conversation. Derek Ehrsam, CA license #4451115." />
   <link rel="canonical" href="https://wcholdingsgroup.com/life-insurance-questions-california.html" />
+  <meta name="theme-color" content="#f5f2eb" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Fraunces:opsz,wght@9..144,400;9..144,500&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="insurance.css" />
+  <script src="insurance.js" defer></script>
 </head>
-<body>
-  <header>
-    <nav class="wrap" aria-label="Main navigation">
-      <a class="brand" href="/">
-        <img src="assets/wchg-logo.svg" alt="WC Holdings Group logo" />
-        <span>Derek Ehrsam Insurance Services</span>
-      </a>
-      <a class="nav-link" href="#review">Request an educational review</a>
-    </nav>
+<body class="education-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap masthead">
+      <a class="brand" href="/" aria-label="Derek Ehrsam Insurance Services home"><span class="brand-name">Derek Ehrsam<span class="brand-period">.</span></span><span class="brand-detail">Insurance Services</span></a>
+      <button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false">Menu <span class="menu-mark" aria-hidden="true"><i></i><i></i></span></button>
+      <nav id="primary-navigation" class="primary-nav" aria-label="Main navigation">
+        <a href="/#planning">Planning</a>
+<a href="/#process">The conversation</a>
+<a href="life-insurance-california.html">Life insurance</a>
+<a href="/#about">About Derek</a>
+        <a class="nav-contact" href="/#contact">Talk with Derek <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
   </header>
-
-  <main>
-    <section class="hero">
-      <div class="wrap hero-grid">
-        <div>
-          <p class="eyebrow">California life-insurance education</p>
-          <h1>Start with your questions—not a product pitch.</h1>
-          <p class="hero-copy">A licensed, carrier-neutral conversation can help you organize who depends on you, what coverage you already have, how long protection may be needed, and which tradeoffs to understand before considering any carrier or policy.</p>
-          <div class="actions" aria-label="Contact Derek Ehrsam">
-            <a class="button primary" href="tel:+14088926419">Call (408) 892-6419</a>
-            <a class="button secondary" href="sms:+14088926419">Text Derek</a>
-          </div>
-          <p><small>Insurance solicitation: Derek Ehrsam is a licensed California insurance agent and may respond to your inbound call or text.</small></p>
-        </div>
-        <aside class="profile" aria-label="Licensed insurance agent information">
-          <img src="assets/derek-portrait.jpg" alt="Derek Ehrsam" />
-          <strong>Derek Ehrsam</strong>
-          <span>Derek Ehrsam Insurance Services</span>
-          <span>California insurance license #4451115</span>
-          <span>Principal place of business: Los Gatos, California</span>
-        </aside>
-      </div>
-    </section>
-
-    <section aria-labelledby="questions-heading">
-      <div class="wrap">
-        <p class="eyebrow">The protection checkup</p>
-        <h2 id="questions-heading">Three useful questions to answer first</h2>
-        <div class="question-grid">
-          <article class="card"><span class="number">1</span><h3>Who depends on your income?</h3><p>Consider children, a spouse or partner, debts, housing, education goals, caregiving, and other responsibilities.</p></article>
-          <article class="card"><span class="number">2</span><h3>What coverage already exists?</h3><p>Workplace coverage can be a useful starting point. Ask how much it provides, whether it follows you, and how it fits the complete need.</p></article>
-          <article class="card"><span class="number">3</span><h3>How long is protection needed?</h3><p>Different obligations have different time horizons. Understanding those dates helps organize the questions before policy comparisons begin.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="mist" aria-labelledby="tradeoffs-heading">
-      <div class="wrap split">
-        <div>
-          <p class="eyebrow">General education</p>
-          <h2 id="tradeoffs-heading">Term and permanent coverage can address different needs.</h2>
-          <p>A useful review starts with the protection objective and then explains general duration, premium, flexibility, and policy tradeoffs. It should not begin by assuming a particular carrier or policy is right for you.</p>
-        </div>
-        <div class="notice">
-          <h3>What this page does not do</h3>
-          <ul>
-            <li>It does not recommend a specific carrier or policy.</li>
-            <li>It does not promise approval, pricing, savings, returns, or outcomes.</li>
-            <li>It does not determine suitability or underwriting eligibility.</li>
-            <li>It does not replace a complete licensed review.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="review">
-      <div class="wrap callout">
-        <p class="eyebrow">Licensed human next step</p>
-        <h2>Request a private educational review.</h2>
-        <p>Call or text with the general protection question you want to understand. Derek will confirm your state and arrange the appropriate licensed conversation before discussing a particular carrier or policy.</p>
-        <div class="actions">
-          <a class="button primary" href="tel:+14088926419">Call Derek</a>
-          <a class="button secondary" href="sms:+14088926419">Start an inbound text</a>
-        </div>
-      </div>
+  <main id="main">
+    <section class="page-hero wrap"><a class="breadcrumb" href="/">Home <span aria-hidden="true">/</span></a><p class="eyebrow">Field notes / Your protection questions</p><h1>Who depends on you?<br />Start there.</h1><div class="page-hero-bottom"><p>Your responsibilities, existing coverage and time horizon help organize the conversation before any carrier or policy is considered.</p><a class="text-action" href="#review">Talk with Derek <span aria-hidden="true">↗</span></a></div><nav class="article-nav" aria-label="On this page"><a href="#questions-heading">Three first questions</a><a href="#tradeoffs-heading">Coverage tradeoffs</a><a href="#prepare">What to prepare</a><a href="#review">Educational review</a></nav></section>
+    <section class="section-space" aria-labelledby="questions-heading"><div class="wrap"><div class="section-intro"><p class="eyebrow">01 / The protection checkup</p><h2 id="questions-heading">Three useful questions<br />to answer first.</h2><p>You do not need an exact coverage amount or a product choice to begin. These are the facts to put on the table.</p></div><div class="topic-list"><article class="topic-row"><span class="topic-number">01</span><h3>Who depends<br />on your income?</h3><div><p>Think about children, a spouse or partner, housing, debts, education goals and caregiving. Include the responsibilities you expect to carry in the years ahead.</p></div></article><article class="topic-row"><span class="topic-number">02</span><h3>What coverage<br />already exists?</h3><div><p>Workplace benefits and personal policies belong in the same review. Ask what they provide, how long they last and whether workplace coverage follows you when employment changes.</p></div></article><article class="topic-row"><span class="topic-number">03</span><h3>How long is<br />protection needed?</h3><div><p>A mortgage, a child's education and a business obligation can have different timelines. Knowing those dates helps frame the coverage and premium questions.</p></div></article></div></div></section>
+    <section class="section-space process-section" aria-labelledby="tradeoffs-heading"><div class="wrap editorial-grid"><div class="editorial-label"><p class="eyebrow">02 / General education</p><h2 id="tradeoffs-heading">Different needs.<br />Different tradeoffs.</h2></div><div class="editorial-body"><p class="large-copy">Term and permanent coverage address different durations, premiums and policy features.</p><p>Start with the protection objective, then discuss what the policy requires and how it fits your timeline and budget. A useful review does not assume a particular carrier or policy is right for you.</p><a class="inline-link" href="life-insurance-california.html#basics">Read about coverage and policy design <span aria-hidden="true">↗</span></a><div class="education-note"><h3>The scope of this page</h3><p>This is general educational information. It does not recommend a specific carrier or policy, promise approval, pricing, savings, returns or outcomes, or determine suitability or underwriting eligibility. It does not replace a complete licensed review.</p></div></div></div></section>
+    <section id="prepare" class="section-space"><div class="wrap editorial-grid"><div class="editorial-label"><p class="eyebrow">03 / Before a conversation</p><h2>A few details<br />to have in mind.</h2><p class="section-copy">Keep your initial call or message general. Sensitive records belong in an appropriate secure workflow.</p></div><div class="faq-list"><details open><summary>What should I be ready to discuss?</summary><div class="faq-answer"><p>Who relies on you, the obligations you want to protect, any coverage you already have and the question that brought you here. A general premium budget and time horizon can help make the conversation more useful.</p></div></details><details><summary>Do I need to choose a type of policy first?</summary><div class="faq-answer"><p>No. Start with the responsibility or planning problem. Coverage duration, policy features, premium commitments and tradeoffs can be discussed before considering a particular carrier or policy.</p></div></details><details><summary>Can the website confirm coverage or eligibility?</summary><div class="faq-answer"><p>No. This site offers education and direct contact with Derek. Availability and eligibility depend on your state and individual circumstances; a licensed review and the carrier's underwriting process are separate next steps. Coverage is not bound here.</p></div></details><details><summary>What should I leave out of a text or email?</summary><div class="faq-answer"><p>Do not send Social Security numbers, payment-card information, medical records or other highly sensitive details in an ordinary text or email. Begin with the general question and preferred way to speak.</p></div></details></div></div></section>
+    <section id="review" class="contact-section section-space">
+      <div class="wrap contact-grid"><div><p class="eyebrow">A conversation with Derek</p><h2>Start with the question on your mind.</h2><p class="contact-copy">Call or text with the general protection question you want to understand. Derek will confirm your state and arrange the appropriate licensed conversation before discussing a particular carrier or policy.</p><p class="contact-note">California insurance license #4451115<br />For eligible California residents.</p></div>
+      <div class="contact-methods"><a href="tel:+14088926419"><span class="contact-label">Call Derek</span><span class="contact-value">(408) 892-6419 <span aria-hidden="true">↗</span></span></a><a href="sms:+14088926419"><span class="contact-label">Text Derek</span><span class="contact-value">Text your question <span aria-hidden="true">↗</span></span></a><a href="mailto:ehrsam_derek@nlgroupmail.com"><span class="contact-label">Email Derek</span><span class="contact-email">ehrsam_derek@nlgroupmail.com <span aria-hidden="true">↗</span></span></a><p class="contact-privacy">Please keep an initial text or email to general questions. Do not send medical records, Social Security numbers or payment details. <a href="privacy.html">How your information is handled</a></p></div></div>
     </section>
   </main>
-
-  <footer>
+  <footer class="site-footer">
     <div class="wrap">
-      <p><strong>Licensed identity:</strong> Derek Ehrsam · Derek Ehrsam Insurance Services · California insurance license #4451115 · Insurance services offered to eligible California residents.</p>
-      <p><strong>Insurance solicitation:</strong> This page provides general educational information and invites a conversation with a licensed insurance agent. It does not recommend a specific carrier or policy. Availability and eligibility vary by state and individual circumstances.</p>
-      <p><strong>Text messaging:</strong> If you initiate a text, you consent to receive replies about your inquiry. Message and data rates may apply. Reply STOP to opt out. Mobile opt-in data will not be sold or shared with third parties for their marketing.</p>
-      <p><strong>Business address:</strong> 100 Broadway, Apt 2, Los Gatos, CA 95030</p>
-      <p><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a></p>
-      <p>&copy; 2026 WC Holdings Group, LLC. All rights reserved.</p>
+      <div class="footer-top"><a class="footer-name" href="/">Derek Ehrsam<br /><span>Insurance Services</span></a><p>California insurance license #4451115<br />Principal place of business: Los Gatos, California</p><nav aria-label="Footer navigation"><a href="life-insurance-california.html">Life insurance &amp; IUL</a><a href="life-insurance-questions-california.html">Questions to start with</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a></nav></div>
+      <div class="footer-notices">
+        <p><strong>Licensed identity &amp; insurance solicitation.</strong> Derek Ehrsam · Derek Ehrsam Insurance Services · California insurance license #4451115. Insurance services offered to eligible California residents. This website provides general educational information and invites a conversation with a licensed insurance agent. It does not recommend a specific carrier or policy, determine suitability or underwriting eligibility, or promise approval, pricing, savings, returns or outcomes. Availability and eligibility vary by state and individual circumstances. Coverage is never bound through this website.</p>
+        <p><strong>Text messaging.</strong> If you initiate a text, you consent to receive replies about your inquiry. Message and data rates may apply. Reply STOP to opt out. Mobile opt-in data will not be sold or shared with third parties for their marketing.</p>
+        <p><strong>Business address.</strong> 100 Broadway, Apt 2, Los Gatos, CA 95030</p>
+      </div>
+      <div class="footer-bottom"><p>© 2026 WC Holdings Group, LLC. All rights reserved.</p><a href="ad-ops.html">Ad Operations Integration <span aria-hidden="true">↗</span></a></div>
     </div>
   </footer>
 </body>
