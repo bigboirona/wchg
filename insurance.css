@@ -7,3 +7,17 @@
 @media(max-width:360px){.wrap{width:calc(100% - 32px)}.masthead{gap:0 12px}.brand-name{font-size:25px}.brand-detail{font-size:7px}.menu-toggle{font-size:10px;gap:7px}.hero h1{font-size:43px}.hero .actions{gap:13px 17px}.hero .button{font-size:12px;gap:19px;padding-inline:16px}.hero .text-action{font-size:12px}.hero-portrait figcaption span:last-child{font-size:8px}.contact-value{font-size:27px}.contact-email{font-size:12px}.page-hero h1{font-size:37px}.topic-row h3{font-size:26px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
 @media print{.site-header,.menu-toggle,.skip-link,.site-footer,.contact-section{display:none}.wrap{width:100%}.section-space{padding-block:30px}.advanced-section{background:#fff;color:#000}.advanced-section p,.advanced-section .eyebrow,.plain-list{color:#000}.faq-list details .faq-answer{display:block}body{font-size:12px}.legal-layout{display:block}.legal-side{display:none}}
+
+/* Reading and control craft across the existing adviser identity. */
+:is(.button,.text-action,.inline-link,.primary-nav a,.footer-top nav a,.article-nav a,.menu-toggle) { min-height:44px; }
+:is(.button,.text-action,.inline-link,.menu-toggle,summary) { transition:background-color 160ms ease,color 160ms ease,border-color 160ms ease,transform 120ms ease;touch-action:manipulation; }
+:is(.button,.menu-toggle):active { transform:translateY(1px); }
+:is(.hero-license,.contact-note,.contact-privacy,.footer-notices p,.footer-bottom,.reading-meta,.resource-row p,.legal-body .updated) { font-size:13px;line-height:1.75; }
+.primary-nav a { display:inline-flex;align-items:center; }
+:is(.footer-top nav a,.article-nav a,.inline-link) { display:inline-flex;align-items:center; }
+.brand-detail { font-size:10px;letter-spacing:.12em; }
+@media(max-width:650px) { .hero .eyebrow,.page-hero>.eyebrow { font-size:12px;line-height:1.65; } .menu-toggle { font-size:13px; } .hero-portrait figcaption span:last-child { font-size:11px; } }
+@media(prefers-reduced-motion:reduce) { *,*::before,*::after { transition:none!important;animation:none!important;scroll-behavior:auto!important; } }
+
+.primary-nav a[aria-current="page"] { text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px; }
+@media(max-width:900px) { .js .menu-toggle { font-size:13px;min-height:44px; } }

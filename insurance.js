@@ -5,6 +5,10 @@
   const masthead = document.querySelector(".masthead");
   if (!toggle || !nav || !masthead) return;
   document.documentElement.classList.add("js");
+  for (const link of nav.querySelectorAll("a[href]")) {
+    const url = new URL(link.href);
+    if (url.origin === location.origin && url.pathname === location.pathname && !url.hash) link.setAttribute("aria-current", "page");
+  }
   const smallScreen = window.matchMedia("(max-width: 900px)");
   const setOpen = (open, restoreFocus = false) => {
     nav.classList.toggle("is-open", open);
